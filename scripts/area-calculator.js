@@ -40,9 +40,22 @@ function calculateRectangleArea(){
     finalRectangleArea.innerText = rectangleArea;
 }
 
+// reusable function --> reduce duplicate code
+
 function calculateParallelogramArea(){
-    const baseFieldPara = document.getElementById('parallelogram-base');
-    const baseFieldParaText = baseFieldPara.value;
-    const basePara = parseFloat(baseFieldParaText);
-    console.log(basePara);
+    const base = getInputValue('parallelogram-base');
+    console.log(base);
+
+    const height = getInputValue('parallelogram-height');
+    console.log(height);
+
+    const area = base * height;
+}
+
+// reusable get input value field in number..
+function getInputValue(fieldId){
+    const inputField = document.getElementById(fieldId);
+    const inputValueText = inputField.value;
+    const value = parseFloat(inputValueText);
+    return value;
 }
