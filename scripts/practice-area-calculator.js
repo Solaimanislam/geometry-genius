@@ -28,6 +28,14 @@ function calculateRhombusArea(){
     const area = .5 * d1 * d2;
     setElementInnerText('rhombus-area', area);
 }
+// reusable function for Ellipse............
+function calculateEllipseArea(){
+    const firstRadius = getInputValueById('ellipse-first-radius');
+    const secondRadius = getInputValueById('ellipse-second-radius');
+    const area = 3.14 * firstRadius * secondRadius;
+    const areaTwoDecimal = area.toFixed(2);
+    setElementInnerText('ellipse-area',areaTwoDecimal);
+}
 
 function getInputValueById(inputId){
     const elementField = document.getElementById(inputId);
