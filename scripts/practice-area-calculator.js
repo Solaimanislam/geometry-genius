@@ -17,6 +17,12 @@ function calculatorTriangleArea(){
 function calculateRectangleArea(){
     const length = getInputValueById('rectangle-length');
     const width = getInputValueById('rectangle-width');
+    // validate
+    if(isNaN(length) || isNaN(height))
+    {
+        alert('Please insert a number');
+        return;
+    }
     const area = length * width;
     setElementInnerText('rectangle-area', area);
     addToCalculationEntry('Rectangle', area);
@@ -40,6 +46,12 @@ function calculateParallelogramArea(){
 function calculateRhombusArea(){
     const d1 = getInputValueById('rhombus-d1');
     const d2 = getInputValueById('rhombus-d2');
+     // validate
+     if(isNaN(d1) || isNaN(d2))
+     {
+         alert('Please insert a number');
+         return;
+     }
     const area = .5 * d1 * d2;
     setElementInnerText('rhombus-area', area);
     addToCalculationEntry('Rhombus', area);
@@ -48,6 +60,13 @@ function calculateRhombusArea(){
 function calculateEllipseArea(){
     const firstRadius = getInputValueById('ellipse-first-radius');
     const secondRadius = getInputValueById('ellipse-second-radius');
+     // validate
+     if(isNaN(firstRadius) || isNaN(secondRadius))
+     {
+         alert('Please insert a number');
+         return;
+     }
+
     const area = 3.14 * firstRadius * secondRadius;
     const areaTwoDecimal = area.toFixed(2);
     setElementInnerText('ellipse-area',areaTwoDecimal);
